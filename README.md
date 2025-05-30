@@ -1,7 +1,113 @@
 NLP Assignment #2
 Isuru Bandara
 ii22012
+---
 
+## Token Frequency Statistics
+
+## Results of Convert_to_ekman.py
+
+### 📊 TRAIN DATASET
+
+#### Top 10 Unigrams
+
+| Rank | Unigram | Frequency |
+| ---- | ------- | --------- |
+| 1    | the     | 14,896    |
+| 2    | i       | 13,966    |
+| 3    | a       | 12,047    |
+| 4    | to      | 10,442    |
+| 5    | it      | 9,026     |
+| 6    | you     | 8,203     |
+| 7    | and     | 7,331     |
+| 8    | that    | 7,044     |
+| 9    | is      | 6,991     |
+| 10   | name    | 6,791     |
+
+#### Top 10 Bigrams
+
+| Rank | Bigram        | Frequency |
+| ---- | ------------- | --------- |
+| 1    | (’ , s)       | 1,805     |
+| 2    | (’ , t)       | 1,609     |
+| 3    | (in , the)    | 1,159     |
+| 4    | (i , ’)       | 1,141     |
+| 5    | (this , is)   | 962       |
+| 6    | (of , the)    | 934       |
+| 7    | (to , be)     | 800       |
+| 8    | (’ , m)       | 744       |
+| 9    | (thank , you) | 699       |
+| 10   | (for , the)   | 685       |
+
+---
+
+### DEV DATASET
+
+#### Top 10 Unigrams
+
+| Rank | Unigram | Frequency |
+| ---- | ------- | --------- |
+| 1    | the     | 1,884     |
+| 2    | i       | 1,664     |
+| 3    | a       | 1,500     |
+| 4    | to      | 1,251     |
+| 5    | it      | 1,208     |
+| 6    | you     | 1,031     |
+| 7    | and     | 939       |
+| 8    | that    | 857       |
+| 9    | name    | 856       |
+| 10   | is      | 844       |
+
+#### Top 10 Bigrams
+
+| Rank | Bigram      | Frequency |
+| ---- | ----------- | --------- |
+| 1    | (’ , s)     | 244       |
+| 2    | (’ , t)     | 199       |
+| 3    | (i , ’)     | 148       |
+| 4    | (in , the)  | 144       |
+| 5    | (this , is) | 125       |
+| 6    | (it , ’)    | 109       |
+| 7    | (of , the)  | 103       |
+| 8    | (’ , m)     | 96        |
+| 9    | (to , be)   | 88        |
+| 10   | (i , love)  | 87        |
+
+---
+
+### TEST DATASET
+
+#### Top 10 Unigrams
+
+| Rank | Unigram | Frequency |
+| ---- | ------- | --------- |
+| 1    | i       | 1,775     |
+| 2    | the     | 1,767     |
+| 3    | a       | 1,534     |
+| 4    | to      | 1,270     |
+| 5    | it      | 1,190     |
+| 6    | you     | 1,073     |
+| 7    | and     | 931       |
+| 8    | name    | 870       |
+| 9    | that    | 869       |
+| 10   | is      | 848       |
+
+#### Top 10 Bigrams
+
+| Rank | Bigram        | Frequency |
+| ---- | ------------- | --------- |
+| 1    | (’ , s)       | 249       |
+| 2    | (’ , t)       | 203       |
+| 3    | (i , ’)       | 158       |
+| 4    | (in , the)    | 156       |
+| 5    | (of , the)    | 129       |
+| 6    | (this , is)   | 116       |
+| 7    | (’ , m)       | 111       |
+| 8    | (it , ’)      | 104       |
+| 9    | (thank , you) | 103       |
+| 10   | (i , love)    | 87        |
+
+---
 ## Evaluation
 
 ### Confusion Matrix
