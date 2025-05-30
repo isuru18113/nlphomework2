@@ -1,7 +1,7 @@
 import pandas as pd
 from numpy import std
 
-from sklearn.feature_extraction.text import TfidfVectorizer  # Changed from CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report, accuracy_score, precision_recall_fscore_support
