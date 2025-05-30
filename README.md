@@ -1,5 +1,5 @@
-NLP Assignment #2
-Isuru Bandara
+NLP Assignment #2 /
+Isuru Bandara /
 ii22012
 ---
 
@@ -198,6 +198,8 @@ Text cleaning (lemmatization, lowercasing, removing numbers/punctuation) **sligh
 
 ---
 
+
+
 ### Class-wise Performance
 
 | Emotion  | Precision | Recall | F1 Score |
@@ -228,3 +230,80 @@ Text cleaning (lemmatization, lowercasing, removing numbers/punctuation) **sligh
 The gap between micro and macro metrics highlights class imbalance. The model is biased toward frequent classes.
 
 ---
+
+### evaluate_classifier.py Results
+
+---
+
+## 📊 Detailed Classification Report (Test Set)
+
+**Accuracy**: `0.45`
+**Macro-Average F1**: `0.36`
+**Confusion Matrix**: `confusion_matrix.png`
+
+| Emotion  | Precision | Recall | F1-Score | Support |
+| -------- | --------- | ------ | -------- | ------- |
+| anger    | 0.31      | 0.40   | 0.35     | 520     |
+| disgust  | 0.14      | 0.39   | 0.20     | 76      |
+| fear     | 0.16      | 0.44   | 0.24     | 77      |
+| joy      | 0.71      | 0.57   | 0.63     | 1603    |
+| neutral  | 0.53      | 0.35   | 0.42     | 1606    |
+| sadness  | 0.25      | 0.46   | 0.33     | 259     |
+| surprise | 0.26      | 0.39   | 0.31     | 449     |
+
+| Metric          | Value |
+| --------------- | ----- |
+| Accuracy        | 0.45  |
+| Macro Avg F1    | 0.36  |
+| Weighted Avg F1 | 0.47  |
+
+---
+
+## Performance Comparison with Benchmark
+
+| Emotion   | My Precision | Benchmark Precision | My Recall | Benchmark Recall | My F1    | Benchmark F1 |
+| --------- | ------------ | ------------------- | --------- | ---------------- | -------- | ------------ |
+| anger     | 0.31         | 0.50                | 0.40      | 0.65             | 0.35     | 0.57         |
+| disgust   | 0.14         | 0.52                | 0.39      | 0.53             | 0.20     | 0.53         |
+| fear      | 0.16         | 0.61                | 0.44      | 0.76             | 0.24     | 0.68         |
+| joy       | 0.71         | 0.77                | 0.57      | 0.88             | 0.63     | 0.82         |
+| neutral   | 0.53         | 0.66                | 0.35      | 0.67             | 0.42     | 0.66         |
+| sadness   | 0.25         | 0.56                | 0.46      | 0.62             | 0.33     | 0.59         |
+| surprise  | 0.26         | 0.53                | 0.39      | 0.70             | 0.31     | 0.61         |
+| **Macro** | **0.34**     | **0.59**            | **0.43**  | **0.69**         | **0.36** | **0.64**     |
+
+* **Micro-Average Accuracy**: `0.45`
+* **Macro-Average F1**: `0.36`
+
+---
+
+## Vocabulary Pruning Impact
+
+| `min_df` | Vocab Size | Reduction |
+| -------- | ---------- | --------- |
+| 1        | 7766       | ↓ 22.3%   |
+| 2        | 3065       | ↓ 69.3%   |
+| 5        | 1187       | ↓ 88.1%   |
+| 10       | 599        | ↓ 94.0%   |
+
+---
+
+## Text Normalization Impact
+
+**Accuracy After Cleaning**: `0.43`
+**Macro-Average F1 After Cleaning**: `0.34`
+
+| Emotion  | Precision | Recall | F1-Score | Support |
+| -------- | --------- | ------ | -------- | ------- |
+| anger    | 0.30      | 0.36   | 0.33     | 520     |
+| disgust  | 0.10      | 0.38   | 0.16     | 76      |
+| fear     | 0.17      | 0.43   | 0.24     | 77      |
+| joy      | 0.70      | 0.56   | 0.62     | 1603    |
+| neutral  | 0.51      | 0.32   | 0.39     | 1606    |
+| sadness  | 0.25      | 0.45   | 0.32     | 259     |
+| surprise | 0.24      | 0.40   | 0.30     | 449     |
+
+---
+
+
+
