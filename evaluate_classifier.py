@@ -5,6 +5,12 @@ import seaborn as sns
 import joblib
 import re
 from sklearn.feature_extraction.text import CountVectorizer
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
+
 from sklearn.metrics import (
     classification_report,
     confusion_matrix,
@@ -12,6 +18,8 @@ from sklearn.metrics import (
     accuracy_score,
     precision_recall_fscore_support
 )
+
+
 
 # Load test data
 test_df = pd.read_csv("dataset/test_ekman.tsv", sep="\t", skiprows=1, names=["text", "label"])
@@ -78,9 +86,13 @@ comparison.loc[len(comparison.index)] = [
 ]
 
 print("\n=== Performance Comparison ===")
-print(comparison.to_string(index=False))
+print(comparison.round(2).to_string(index=False))
 print(f"\nMicro-Average Accuracy: {micro_acc:.2f}")
 print(f"Macro-Average F1:       {macro_f1:.2f}")
+
+
+
+
 
 # Vocabulary Pruning Analysis
 print("\n=== Vocabulary Pruning Impact ===")
@@ -96,11 +108,7 @@ for min_df in [1, 2, 5, 10]:
 
 # Text Normalization Impact Analysis
 def analyze_cleaning_impact():
-    from nltk.tokenize import word_tokenize
-    from nltk.stem import WordNetLemmatizer
-    import nltk
-    nltk.download('punkt')
-    nltk.download('wordnet')
+    
     
     lemmatizer = WordNetLemmatizer()
     

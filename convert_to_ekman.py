@@ -8,7 +8,7 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 
-# Download required resources for tokenization and lemmatization
+# resources  tokenization and lemmatization
 nltk.download("punkt")
 nltk.download("wordnet")
 nltk.download("omw-1.4")
@@ -16,26 +16,26 @@ nltk.download("omw-1.4")
 # Initialize lemmatizer
 lemmatizer = WordNetLemmatizer()
 
-# === Step 1: Load Ekman mapping (fine-grained -> Ekman classes) ===
+# === Step 1: Load Ekman mapping ===
 with open("dataset/ekman_mapping.json", "r") as f:
     ekman_mapping = json.load(f)
 
-# Create reverse mapping: fine-grained emotion -> Ekman category
+# Create reverse mapping: emotion -> Ekman category
 fine_to_ekman = {fine: ekman for ekman, fine_list in ekman_mapping.items() for fine in fine_list}
 fine_to_ekman["neutral"] = "neutral"  # Include neutral explicitly
 
-# === Step 2: Load emotions.txt to map label IDs -> fine-grained emotion names ===
+# === Step 2: Load emotions.txt to map label IDs -> emotion names ===
 with open("dataset/emotions.txt", "r") as f:
     id_to_label = {str(i): label.strip() for i, label in enumerate(f)}
 
-# === Step 3: Function to process and clean one dataset (train/dev/test) ===
+# === Step 3: Function to process and clean one dataset ===
 def process_file(filepath):
     df = pd.read_csv(filepath, sep="\t", header=None, names=["text", "labels", "ids"])
 
     # Ignore the 3rd column (ids)
     df = df[["text", "labels"]]
 
-    # Remove multi-label samples (those with comma-separated label IDs)
+    # Remove multi-label samples
     df = df[df["labels"].apply(lambda x: "," not in str(x))]
 
     # Convert label ID to fine-grained label
@@ -47,7 +47,7 @@ def process_file(filepath):
     # Convert fine-grained label to Ekman class
     df["labels"] = df["labels"].map(lambda label: fine_to_ekman.get(label, None))
 
-    # Drop rows with unmapped emotions (i.e. not in 6 Ekman + neutral)
+    # Drop rows with unmapped emotions
     df = df.dropna(subset=["labels"])
 
     return df
@@ -90,7 +90,7 @@ def analyze_frequencies(df, split_name):
     print("\nTop 10 bigrams:")
     print(bigram_counts.most_common(10))
 
-# === Step 6: Process all splits (train/dev/test) and save cleaned versions ===
+# === Step 6: Process all splits (train,dev,test) and save cleaned versions ===
 splits = ["train", "dev", "test"]
 processed_data = {}
 
