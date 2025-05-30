@@ -108,6 +108,61 @@ ii22012
 | 10   | (i , love)    | 87        |
 
 ---
+
+## multi-class Naïve Bayes classifier
+
+### Validation Set Results
+
+**Accuracy**: `0.444`
+
+#### 📋 Classification Report
+
+| Emotion  | Precision | Recall | F1-Score | Support |
+| -------- | --------- | ------ | -------- | ------- |
+| anger    | 0.29      | 0.39   | 0.33     | 485     |
+| disgust  | 0.08      | 0.26   | 0.12     | 61      |
+| fear     | 0.15      | 0.47   | 0.23     | 66      |
+| joy      | 0.73      | 0.58   | 0.65     | 1668    |
+| neutral  | 0.50      | 0.33   | 0.40     | 1592    |
+| sadness  | 0.25      | 0.51   | 0.34     | 241     |
+| surprise | 0.26      | 0.37   | 0.31     | 435     |
+
+**Overall Metrics**:
+
+| Metric          | Score |
+| --------------- | ----- |
+| Accuracy        | 0.444 |
+| Macro Avg F1    | 0.34  |
+| Weighted Avg F1 | 0.46  |
+
+---
+
+###  Test Set Results
+
+**Accuracy**: `0.446`
+
+#### 📋 Classification Report
+
+| Emotion  | Precision | Recall | F1-Score | Support |
+| -------- | --------- | ------ | -------- | ------- |
+| anger    | 0.31      | 0.40   | 0.35     | 520     |
+| disgust  | 0.14      | 0.39   | 0.20     | 76      |
+| fear     | 0.16      | 0.44   | 0.24     | 77      |
+| joy      | 0.71      | 0.57   | 0.63     | 1603    |
+| neutral  | 0.53      | 0.35   | 0.42     | 1606    |
+| sadness  | 0.25      | 0.46   | 0.33     | 259     |
+| surprise | 0.26      | 0.39   | 0.31     | 449     |
+
+**Overall Metrics**:
+
+| Metric          | Score |
+| --------------- | ----- |
+| Accuracy        | 0.446 |
+| Macro Avg F1    | 0.36  |
+| Weighted Avg F1 | 0.47  |
+
+
+---
 ## Evaluation
 
 ### Confusion Matrix
