@@ -3,8 +3,11 @@ Isuru Bandara
 ii22012
 
 ## Evaluation
-[
-](https://github.com/isuru18113/nlphomework2/blob/main/confusion_matrix.png)
+
+### Confusion Matrix
+
+![Confusion Matrix](https://github.com/isuru18113/nlphomework2/raw/main/confusion_matrix.png)
+
 ---
 ## 📊 Results Analysis
 
